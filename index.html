@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SHIERIN'S HAIR & BEAUTY - Dein Salon für Haare und Schönheit">
+    <title>SHIERIN'S HAIR & BEAUTY</title>
+
+    <!-- Google Fonts Einbindung -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Megrim&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- Verknüpfung zur externen CSS-Datei -->
+    <link rel="stylesheet" href="shierin.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <h1>SHIERIN'S HAIR & BEAUTY</h1>
+            </a>
+        </div>
+
+        <!-- Sandwich / Burger Button für mobile Bildschirme -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="mainNav">
+            <ul>
+                <li><a href="salon.html">Der Salon</a></li>
+                <li><a href="team.html">Das Team</a></li>
+                <li><a href="leistungen.html">Unsere Leistungen</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero-Bereich -->
+    <section class="hero" id="start">
+        <div class="hero-content">
+            <h2>Shierin's Hair & Beauty</h2>
+            <p>Schön, dass Sie den Weg zu uns gefunden haben!</p>
+            <a href="leistungen.html" class="btn btn-outline">zu unseren Leistungen</a>
+        </div>
+    </section>
+
+    <!-- Hauptbereich -->
+    <main id="salon">
+
+        <!-- Container 1: Der Salon -->
+        <article class="salon-block">
+            <h3>Der Salon</h3>
+            <p>Modern – Kreativ – Individuell: Ein Handwerk, das viele Facetten bietet, braucht einen Experten.</p>
+            
+            <details class="salon-details">
+                <summary class="btn btn-dark">entdecken</summary>
+                <div class="expandable-content">
+                    <div class="image-grid">
+                        <img src="picture/salon1.jpg" alt="Salon Einblick 1">
+                        <img src="picture/salon2.jpg" alt="Salon Einblick 2">
+                    </div>
+                    <a href="salon.html" class="btn btn-outline-dark">Mehr anzeigen</a>
+                </div>
+            </details>
+        </article>
+
+        <!-- Container 2: Das Team -->
+        <article class="salon-block">
+            <h3>Das Team</h3>
+            <p>Unser Team besteht aus Viola Schüßler und Shierin Juillot. Wir betreiben das Handwerk des Friseurs mit Leidenschaft!</p>
+            
+            <details class="salon-details">
+                <summary class="btn btn-dark">kennenlernen</summary>
+                <div class="expandable-content">
+                    <div class="image-grid">
+                        <img src="picture/team.jpg" alt="Das Team">
+                    </div>
+                    <a href="team.html" class="btn btn-outline-dark">Mehr anzeigen</a>
+                </div>
+            </details>
+        </article>
+
+        <!-- Container 3: Unsere Leistungen -->
+        <article class="salon-block">
+            <h3>Unsere Leistungen</h3>
+            <p>In unserem Friseursalon "Shierin's Hair & Beauty" bieten wir Ihnen eine Vielzahl hochwertiger Leistungen an.</p>
+            
+            <details class="salon-details">
+                <summary class="btn btn-dark">mehr erfahren</summary>
+                <div class="expandable-content">
+                    <div class="image-grid">
+                        <img src="picture/scheren.jpg" alt="Leistung 1">
+                        <img src="picture/farben.jpg" alt="Leistung 2">
+                    </div>
+                    <a href="leistungen.html" class="btn btn-outline-dark">Mehr anzeigen</a>
+                </div>
+            </details>
+        </article>
+
+        <!-- Container 4: Kontakt -->
+        <article class="salon-block">
+            <h3>Kontakt</h3>
+            <p>Bei Fragen stehen wir Ihnen unter der Telefonnummer 06174 23051 zur Verfügung.</p>
+            
+            <a href="kontakt.html" class="btn btn-dark">kontaktieren</a>
+        </article>
+
+    </main>
+
+    <!-- Scroll-to-Top Pfeil -->
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Nach oben scrollen">&#9650;</a>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 SHIERIN'S HAIR & BEAUTY. Alle Rechte vorbehalten.</p>
+        <nav>
+            <ul>
+                <li><a href="#">Impressum</a></li>
+                <li><a href="#">Datenschutz</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <!-- JavaScript für das Sandwich-Menü und den Scroll-Pfeil -->
+    <script>
+        // 1. Mobile Sandwich-Menü Funktionalität
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('open');
+        });
+
+        // 2. Scroll-to-Top Pfeil Sichtbarkeit steuern
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
