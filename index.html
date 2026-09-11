@@ -16,30 +16,38 @@
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
+<header>
+    <div class="header-container">
+        <!-- 1. Logo (links) -->
         <div class="logo">
             <a href="index.html">
                 <h1>SHIERIN'S HAIR & BEAUTY</h1>
             </a>
         </div>
 
-        <!-- Sandwich / Burger Button für mobile Bildschirme -->
+        <!-- 2. Sandwich-Button (rechts) -->
         <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
             <span></span>
             <span></span>
             <span></span>
         </button>
 
-        <nav id="mainNav">
-            <ul>
-                <li><a href="salon.html">Der Salon</a></li>
-                <li><a href="team.html">Das Team</a></li>
-                <li><a href="leistungen.html">Unsere Leistungen</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
+        <!-- 3. Navigation (ausklappbar auf Mobilgeräten) -->
+      <nav id="mainNav">
+                <ul>
+                    <li><a href="salon.html">Der Salon</a></li>
+                    <li><a href="team.html">Das Team</a></li>
+                    <li class="has-dropdown">
+                        <a href="leistungen.html">Unsere Leistungen</a>
+                        <ul class="dropdown">
+                            <li><a href="newsha.html">NEWSHA</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+    </div>
+</header>
 
     <!-- Hero-Bereich -->
     <section class="hero" id="start">
@@ -62,7 +70,7 @@
         <div class="image-grid">
             <img src="picture/salon1.jpg" alt="Salon Einblick 1">
         </div>
-        <a href="salon.html" class="btn btn-outline-dark">Mehr anzeigen</a>
+        <a href="salon.html" class="btn btn-dark">Mehr anzeigen</a>
     </div>
 </article>
 
@@ -75,7 +83,7 @@
         <div class="image-grid">
             <img src="picture/team.jpg" alt="Das Team">
         </div>
-        <a href="team.html" class="btn btn-outline-dark">Mehr anzeigen</a>
+        <a href="team.html" class="btn btn-dark">Mehr anzeigen</a>
     </div>
 </article>
 
@@ -88,7 +96,7 @@
         <div class="image-grid">
             <img src="picture/scheren.jpg" alt="Leistung 1">
         </div>
-        <a href="leistungen.html" class="btn btn-outline-dark">Mehr anzeigen</a>
+        <a href="leistungen.html" class="btn btn-dark">Mehr anzeigen</a>
     </div>
 </article>
 
@@ -107,7 +115,11 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 SHIERIN'S HAIR & BEAUTY. Alle Rechte vorbehalten.</p>
+        <p>SHIERIN'S HAIR & BEAUTY</p>
+        <p>ALT FALKENSTEIN 2</p>
+        <p>61462 KÖNIGSTEIN IM TAUNUS</p>
+        <br>
+        <p>TEL.: 06174 23051</p>
         <nav>
             <ul>
                 <li><a href="#">Impressum</a></li>

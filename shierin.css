@@ -1,7 +1,8 @@
-/* CSS-VARIABLEN (FARBEN & SCHRIFTEN) */
+/* ==========================================================================
+   1. CSS-VARIABLEN & GLOBALE EINSTELLUNGEN
+   ========================================================================== */
 :root {
-    /* Aus dem Screenshot analysierte Farbcodes */
-    --bg-color: #F9F8F6;       /* Helles Off-White / Elfenbein */
+    --bg-color: #F9F8F6;      /* Helles Off-White / Elfenbein */
     --heading-color: #3D3D3D;  /* Dunkelgrau für Schreibschrift-Überschriften */
     --button-bg: #4A4A4A;     /* Anthrazit für Buttons */
     --footer-bg: #BFB9B4;     /* Warmes Taupe / Greige für den Footer */
@@ -21,42 +22,38 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    /* Überlagerung: Transparente Farbe über dem Marmormuster */
     background-image: 
         linear-gradient(rgba(249, 248, 246, 0.85), rgba(249, 248, 246, 0.8)),
         url('picture/marmormuster.jpg');
     background-repeat: repeat;
-
     color: var(--text-color);
     font-family: var(--font-body);
     line-height: 1.6;
-    
-    /* Box-Begrenzung */
     max-width: 1500px;
     margin: 0 auto;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    position: relative;
 }
 
-/* Passt den fixierten Header an die Box an */
-header {
-    max-width: 1500px;
-    left: 50% !important;
-    transform: translateX(-50%);
-}
-
-/* ÜBERSCHRIFTEN (Standard für Content) */
+/* ÜBERSCHRIFTEN */
 h1, h2, h3 {
     color: var(--heading-color);
     font-family: var(--font-headings);
     line-height: 1.2;
 }
 
-h1 { font-size: 3.5rem; }
-h2 { font-size: 2.8rem; }
-h3 { font-size: 2rem; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2.0rem); }
 
-/* BUTTONS */
+/* ==========================================================================
+   2. BUTTON STYLES
+   ========================================================================== */
 .btn {
     font-family: var(--font-body);
     font-size: 0.95rem;
@@ -93,23 +90,52 @@ h3 { font-size: 2rem; }
     transform: translateY(-2px);
 }
 
-/* 1. HEADER */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    padding: 1.8rem 2.5rem;
-    
+.btn-outline-dark {
+    background-color: transparent;
+    color: var(--button-bg);
+    border: 2px solid var(--button-bg);
+    border-radius: 4px;
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--button-bg);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   3. HEADER & NAVIGATION (DESKTOP & MOBIL)
+   ========================================================================== */
+/* 1. HEADER (Exakt angepasst an die max-width der Website) */
+        header {
+            position: fixed;
+            top: 0;
+            left: 50%;                         /* Vom linken Bildschirmrand in die Mitte */
+            transform: translateX(-50%);       /* Exakt um die Hälfte der eigenen Breite nach links verschieben */
+            width: 100%;
+            max-width: 1500px;                 /* Passt sich exakt der Body-Maximalbreite an */
+            z-index: 1000;
+            padding: 1.2rem 2.5rem;
+            background-color: rgba(249, 248, 246, 0.92);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(191, 185, 180, 0.3);
+            box-sizing: border-box;            /* Wichtig, damit Padding die Breite nicht sprengt */
+        }
+
+/* 3-Spalten-Layout für den Header (Logo exakt mittig, Nav rechts) */
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    
-    background-color: rgba(249, 248, 246, 0.9);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(191, 185, 180, 0.3);
+}
+
+/* Unsichtbares Element links, damit das Logo in der echten Mitte der 3 Spalten sitzt */
+.header-container::before {
+    content: "";
+    display: block;
 }
 
 .logo {
@@ -117,46 +143,124 @@ header {
     text-align: center;
 }
 
+.logo a {
+    text-decoration: none;
+    display: inline-block;
+    color: inherit;
+}
+
 .logo h1 {
     font-family: var(--font-logo) !important;
-    font-size: 1.4rem;
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
     color: var(--text-color);
     letter-spacing: 1.5px;
     margin: 0;
     font-weight: 700;
 }
 
-.logo a {
-    text-decoration: none;
-    color: inherit;
-}
-
 nav {
     grid-column: 3;
-    justify-self: end;
+    justify-self: end; /* Navigation rechtsbündig */
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: clamp(1rem, 2vw, 2rem);
 }
 
-nav a {
+nav a,
+nav a:visited {
     text-decoration: none;
-    color: var(--heading-color);
+    color: var(--heading-color) !important;
     font-family: var(--font-body);
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: clamp(0.88rem, 1vw, 0.98rem);
     letter-spacing: 0.5px;
     transition: color 0.2s ease;
 }
 
-nav a:hover {
-    color: var(--text-color);
+nav a:hover,
+nav a:active {
+    color: var(--text-color) !important;
 }
 
-/* 2. HERO SECTION */
+/* DROPDOWN DESKTOP STYLES (NEWSHA unter Leistungen) */
+nav ul li {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(249, 248, 246, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    padding: 0.5rem 0;
+    list-style: none;
+    min-width: 140px;
+    z-index: 1005;
+    text-align: center;
+}
+
+.dropdown li {
+    width: 100%;
+}
+
+.dropdown a {
+    display: block;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    font-size: 0.88rem;
+}
+
+.has-dropdown:hover .dropdown {
+    display: block;
+}
+
+/* Sandwich-Button (Standardmäßig auf Desktop ausgeblendet) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1002;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--heading-color);
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+    transform-origin: 1px;
+}
+
+.menu-toggle.is-active span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.menu-toggle.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.is-active span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+/* ==========================================================================
+   4. SEKTIONEN (HERO, MAIN & DIVERSE BILDER/ELEMENTE)
+   ========================================================================== */
 .hero {
     position: relative;
     height: 100vh;
@@ -166,9 +270,8 @@ nav a:hover {
     justify-content: center;
     text-align: center;
     padding: 0 1rem;
-    
-    background: linear-gradient(rgba(74, 74, 74, 0.4), rgba(74, 74, 74, 0.4)), 
-                url('picture/Salon.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(74, 74, 74, 0.5), rgba(74, 74, 74, 0.5)), 
+                url('picture/salon0.jpg') center/cover no-repeat;
 }
 
 .hero-content {
@@ -179,28 +282,26 @@ nav a:hover {
 
 .hero-content h2 {
     color: #FFFFFF;
-    font-size: 3.5rem;
     margin-bottom: 1rem;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
 .hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    margin-bottom: 1rem;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
-/* 3. MAIN CONTENT */
 main {
     max-width: 900px;
     margin: 0 auto;
-    padding: 5rem 1.5rem;
+    padding: 7rem 1.5rem 4rem 1.5rem;
 }
 
 .salon-block {
     background-color: transparent;
     padding: 2rem 2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
     text-align: center;
 }
 
@@ -215,7 +316,6 @@ main {
     color: var(--text-color);
 }
 
-/* --- AUSKLAPP-CONTAINER STYLES --- */
 details.salon-details summary {
     list-style: none;
     display: inline-block;
@@ -226,7 +326,7 @@ details.salon-details summary::-webkit-details-marker {
 }
 
 .expandable-content {
-    margin-top: 2rem;
+    margin-top: 1rem;
     animation: fadeIn 0.4s ease-in-out;
 }
 
@@ -245,19 +345,6 @@ details.salon-details summary::-webkit-details-marker {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-.btn-outline-dark {
-    background-color: transparent;
-    color: var(--button-bg);
-    border: 2px solid var(--button-bg);
-    border-radius: 4px;
-}
-
-.btn-outline-dark:hover {
-    background-color: var(--button-bg);
-    color: #FFFFFF;
-    transform: translateY(-2px);
-}
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -269,94 +356,6 @@ details.salon-details summary::-webkit-details-marker {
     }
 }
 
-@media (max-width: 600px) {
-    .image-grid {
-        flex-direction: column;
-    }
-    .image-grid img {
-        width: 100%;
-        height: 200px;
-    }
-}
-
-/* 4. FOOTER */
-footer {
-    background-color: var(--footer-bg);
-    color: var(--footer-text);
-    padding: 3rem 1.5rem;
-    text-align: center;
-    font-size: 0.9rem;
-}
-
-footer nav ul {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-    gap: 1.5rem;
-    list-style: none;
-}
-
-footer a {
-    color: var(--footer-text);
-    text-decoration: underline;
-}
-
-/* RESPONSIVE ANPASSUNGEN (MOBIL) */
-@media (max-width: 768px) {
-    header {
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
-        padding: 1rem;
-    }
-
-    nav {
-        justify-self: center;
-    }
-
-    .hero-content h2 { font-size: 2.5rem; }
-    
-    nav ul {
-        gap: 1rem;
-    }
-
-    main {
-        padding: 3rem 1rem;
-    }
-
-    .salon-block {
-        padding: 2rem 1rem;
-        margin-bottom: 2.5rem;
-    }
-}
-
-/* 1. Sanftes Scrollen aktivieren */
-html {
-    scroll-behavior: smooth;
-}
-
-/* 2. Sandwich-Button Styles (Standardmäßig auf großen Bildschirmen versteckt) */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 28px;
-    height: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-.menu-toggle span {
-    width: 100%;
-    height: 2px;
-    background-color: var(--heading-color);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-/* 3. Scroll-to-Top Pfeil (unten rechts) */
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -389,28 +388,64 @@ html {
     transform: translateY(-3px);
 }
 
-/* 4. RESPONSIVE ANPASSUNGEN (MOBIL) */
-@media (max-width: 768px) {
+/* ==========================================================================
+   5. FOOTER
+   ========================================================================== */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer nav ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+footer a,
+footer a:visited,
+footer a:hover,
+footer a:active {
+    color: var(--footer-text) !important;
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE ANPASSUNGEN (TABLETS & SMARTPHONES)
+   ========================================================================== */
+@media (max-width: 992px) {
     header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.2rem 1.5rem;
+        padding: 1rem 1.5rem;
     }
 
+    .header-container {
+        grid-template-columns: 1fr auto 1fr;
+        width: 100%;
+    }
+
+    /* Logo EXAKT mittig */
     .logo {
-        text-align: left;
-        grid-column: auto; /* Grid-Layout für Mobil aufheben */
+        grid-column: 2;
+        text-align: center;
+        margin: 0;
     }
 
-    /* Sandwich-Button auf Mobilgeräten anzeigen */
+    /* Sandwich-Button EXAKT rechts */
     .menu-toggle {
-        display: flex; 
+        display: flex;
+        grid-column: 3;
+        justify-self: end;
+        margin: 0;
     }
 
-    /* Navigation als einklappbares Menü unter dem Header */
+    /* Navigation als Dropdown-Menü unter dem Header bei Klick */
     header nav {
-        grid-column: auto;
+        grid-column: 1 / -1;
         position: absolute;
         top: 100%;
         left: 0;
@@ -424,9 +459,8 @@ html {
         transition: max-height 0.4s ease-in-out;
     }
 
-    /* Klasse, die per JavaScript hinzugefügt wird */
     header nav.open {
-        max-height: 300px;
+        max-height: 500px;
     }
 
     header nav ul {
@@ -434,5 +468,55 @@ html {
         align-items: center;
         padding: 1.5rem 0;
         gap: 1.2rem;
+        width: 100%;
+    }
+
+    header nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Mobiles Untermenü für NEWSHA */
+    .dropdown {
+        position: static;
+        transform: none;
+        display: none;
+        box-shadow: none;
+        background: transparent;
+        backdrop-filter: none;
+        padding: 0.5rem 0 0 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    header nav.open .dropdown,
+    .has-dropdown:hover .dropdown {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 0.5rem;
+    }
+
+    .dropdown a {
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+
+    main {
+        padding: 6rem 1rem 3rem 1rem;
+    }
+
+    .salon-block {
+        padding: 1.5rem 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .image-grid {
+        flex-direction: column;
+    }
+
+    .image-grid img {
+        width: 100%;
+        height: 200px;
     }
 }
