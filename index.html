@@ -61,6 +61,17 @@
     <!-- Hauptbereich -->
     <main id="salon">
 
+    <!-- Feld für die Öffnungszeiten -->
+        <article class="opening-hours-block">
+            <h3>Öffnungszeiten</h3>
+            <ul class="hours-list">
+                <li><span>Dienstag, Donnerstag & Freitag:</span> <span>09:00 – 18:00 Uhr</span></li>
+                <li><span>Mittwoch & Samstag:</span> <span>09:00 – 13:00 Uhr</span></li>
+                <li><span>Montag:</span> <span>Geschlossen</span></li>
+            </ul>
+            <p class="hours-note">Termine nach Vereinbarung unter der <a href="tel:0617423051" class="phone-link">06174 23051</a></p>
+        </article>
+
         <!-- Container 1: Der Salon -->
 <article class="salon-block">
     <h3>Der Salon</h3>
@@ -129,25 +140,36 @@
     </footer>
 
     <!-- JavaScript für das Sandwich-Menü und den Scroll-Pfeil -->
-    <script>
-        // 1. Mobile Sandwich-Menü Funktionalität
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
         const menuToggle = document.getElementById('menuToggle');
         const mainNav = document.getElementById('mainNav');
+        const backToTopBtn = document.getElementById('backToTop');
 
-        menuToggle.addEventListener('click', () => {
+        // 1. Mobile Sandwich-Menü öffnen/schließen (inkl. X-Animation)
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('is-active');
             mainNav.classList.toggle('open');
         });
 
-        // 2. Scroll-to-Top Pfeil Sichtbarkeit steuern
-        const backToTopBtn = document.getElementById('backToTop');
+        // 2. Menü automatisch schließen, wenn ein Link angeklickt wird
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('is-active');
+                mainNav.classList.remove('open');
+            });
+        });
 
-        window.addEventListener('scroll', () => {
+        // 3. Scroll-to-Top Pfeil Sichtbarkeit steuern
+        window.addEventListener('scroll', function() {
             if (window.scrollY > 300) {
                 backToTopBtn.classList.add('show');
             } else {
                 backToTopBtn.classList.remove('show');
             }
         });
-    </script>
+    });
+</script>
 </body>
 </html>

@@ -16,9 +16,9 @@
         :root {
             --bg-color: #F9F8F6;      
             --heading-color: #3D3D3D;  
-            --button-bg: #4A4A4A;     
-            --footer-bg: #BFB9B4;     
-            --text-color: #A8A09B;     
+            --button-bg: #4A4A4A;    
+            --footer-bg: #BFB9B4;    
+            --text-color: #A8A09B;    
             --footer-text: #FFFFFF;    
 
             /* Schriftarten */
@@ -57,15 +57,14 @@
             line-height: 1.2;
         }
 
-        /* 1. HEADER (3-Spalten-Layout: Logo exakt mittig, Nav rechts) */
-       /* 1. HEADER (Exakt angepasst an die max-width der Website) */
+        /* 1. HEADER (Exakt angepasst an die max-width der Website) */
         header {
             position: fixed;
             top: 0;
-            left: 50%;                         /* Vom linken Bildschirmrand in die Mitte */
+            left: 50%;                                   /* Vom linken Bildschirmrand in die Mitte */
             transform: translateX(-50%);       /* Exakt um die Hälfte der eigenen Breite nach links verschieben */
             width: 100%;
-            max-width: 1500px;                 /* Passt sich exakt der Body-Maximalbreite an */
+            max-width: 1500px;                           /* Passt sich exakt der Body-Maximalbreite an */
             z-index: 1000;
             padding: 1.2rem 2.5rem;
             background-color: rgba(249, 248, 246, 0.92);
@@ -351,8 +350,8 @@
             text-decoration: underline;
         }
 
-        /* RESPONSIVE DESIGN (MOBILANSICHT) */
-        @media (max-width: 992px) {
+        /* RESPONSIVE DESIGN (ERWEITERT AUF 1200px) */
+        @media (max-width: 1350px) {
             header {
                 padding: 1rem 1.5rem;
             }
