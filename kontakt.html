@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kontakt - SHIERIN'S HAIR & BEAUTY">
-    <title>Kontakt - SHIERIN'S HAIR & BEAUTY</title>
+    <meta name="description" content="Ihr Weg zu uns - SHIERIN'S HAIR & BEAUTY">
+    <title>Ihr Weg zu uns - SHIERIN'S HAIR & BEAUTY</title>
 
     <!-- Google Fonts Einbindung -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,21 +57,21 @@
             line-height: 1.2;
         }
 
-        /* 1. HEADER (Exakt angepasst an die max-width der Website) */
+        /* 1. HEADER */
         header {
             position: fixed;
             top: 0;
-            left: 50%;                                   /* Vom linken Bildschirmrand in die Mitte */
-            transform: translateX(-50%);       /* Exakt um die Hälfte der eigenen Breite nach links verschieben */
+            left: 50%;
+            transform: translateX(-50%);
             width: 100%;
-            max-width: 1500px;                           /* Passt sich exakt der Body-Maximalbreite an */
+            max-width: 1500px;
             z-index: 1000;
             padding: 1.2rem 2.5rem;
             background-color: rgba(249, 248, 246, 0.92);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-bottom: 1px solid rgba(191, 185, 180, 0.3);
-            box-sizing: border-box;            /* Wichtig, damit Padding die Breite nicht sprengt */
+            box-sizing: border-box;
         }
 
         .header-container {
@@ -82,7 +82,6 @@
             align-items: center;
         }
 
-        /* Unsichtbares Element links, damit das Logo in der echten Mitte sitzt */
         .header-container::before {
             content: "";
             display: block;
@@ -110,7 +109,7 @@
 
         nav {
             grid-column: 3;
-            justify-self: end; /* Navigation rechtsbündig */
+            justify-self: end;
         }
 
         nav ul {
@@ -234,6 +233,18 @@
             font-weight: 500;
         }
 
+        /* Zwischenüberschriften im Stil des Anschrift-Feldes */
+        .subheading {
+            font-family: var(--font-body) !important;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--heading-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 2.2rem;
+            margin-bottom: 0.6rem;
+        }
+
         .divider {
             width: 80px;
             height: 1px;
@@ -350,7 +361,7 @@
             text-decoration: underline;
         }
 
-        /* RESPONSIVE DESIGN (ERWEITERT AUF 1200px) */
+        /* RESPONSIVE DESIGN */
         @media (max-width: 1350px) {
             header {
                 padding: 1rem 1.5rem;
@@ -464,15 +475,8 @@
             <nav id="mainNav">
                 <ul>
                     <li><a href="index.html">Start</a></li>
-                    <li><a href="salon.html">Der Salon</a></li>
-                    <li><a href="team.html">Das Team</a></li>
-                    <li class="has-dropdown">
-                        <a href="leistungen.html">Unsere Leistungen</a>
-                        <ul class="dropdown">
-                            <li><a href="newsha.html">NEWSHA</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="kontakt.html">Kontakt</a></li>
+                    <li><a href="leistungen.html">Unsere Leistungen</a></li>
+                    <li><a href="kontakt.html">Ihr Weg zu uns</a></li>
                 </ul>
             </nav>
         </div>
@@ -484,8 +488,8 @@
         <!-- Bild Kontakt oben -->
         <img src="picture/kontakt.jpg" alt="Kontakt - SHIERIN'S HAIR & BEAUTY" class="salon-detail-img">
 
-        <!-- Überschrift -->
-        <h2 class="script-heading">Kontakt</h2>
+        <!-- Hauptüberschrift -->
+        <h2 class="script-heading">Ihr Weg zu uns</h2>
         
         <!-- Trennlinie darunter -->
         <div class="divider"></div>
@@ -498,25 +502,31 @@
             <p>61462 Königstein im Taunus / Falkenstein</p>
         </div>
 
-        <!-- Textbereich -->
+        <!-- Textbereich mit schlichten Zwischenüberschriften -->
         <div class="text-block">
             <p>
                 Sie finden "Shierin´s Hair & Beauty" in reizvoller und ruhiger Lage im Nordwesten von Königstein im Taunus, auf der östlichen Seite der berühmten Burg Königstein.
             </p>
+
+            <h3 class="subheading">Anfahrt mit PKW</h3>
             <p>
                 Wenn Sie mit dem PKW zu uns kommen, können Sie ganz bequem auf unseren Kundenparkplätzen parken.
             </p>
+
+            <h3 class="subheading">Anfahrt mit öffentlichen Verkehrsmitteln</h3>
             <p>
-                Dank der Bushaltestelle direkt vor unserer Tür sind wir auch mit öffentlichen Verkehrsmitteln gut erreichbar.
+                Dank der Bushaltestelle (Königstein (Taunus)-Falkenstein Alt-Falkenstein, Linie 84 + 85) direkt vor unserer Tür sind wir auch mit öffentlichen Verkehrsmitteln gut erreichbar.
             </p>
+
+            <h3 class="subheading">Kontakt & Öffnungszeiten</h3>
             <p>
                 Bei Fragen stehen wir Ihnen unter der Telefonnummer <a href="tel:0617423051" class="phone-link">06174 23051</a> zur Verfügung.
             </p>
             <p>
-                Bitte beachten Sie, dass wir montags geschlossen haben. 
+                Bitte beachten Sie, dass wir montags geschlossen haben.
             </p>
             <p>
-                Dienstags, donnerstags und freitags freuen wir uns von 9 Uhr bis 18 Uhr auf Ihren Besuch.
+                Dienstags, donnerstags und freitags freuen wir uns von 9 Uhr bis 17:30 Uhr auf Ihren Besuch.
             </p>
             <p>
                 Mittwochs und samstags sind wir von 9 Uhr bis 13 Uhr für Sie da.

@@ -33,19 +33,16 @@
         </button>
 
         <!-- 3. Navigation (ausklappbar auf Mobilgeräten) -->
-      <nav id="mainNav">
-                <ul>
-                    <li><a href="salon.html">Der Salon</a></li>
-                    <li><a href="team.html">Das Team</a></li>
-                    <li class="has-dropdown">
-                        <a href="leistungen.html">Unsere Leistungen</a>
-                        <ul class="dropdown">
-                            <li><a href="newsha.html">NEWSHA</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="kontakt.html">Kontakt</a></li>
-                </ul>
-            </nav>
+        <nav id="mainNav">
+            <ul>
+                    <a href="index.html">Start</a>
+                    <a href="leistungen.html">Unsere Leistungen</a>
+                    <ul class="dropdown">
+                    </ul>
+                </li>
+                <li><a href="kontakt.html">Ihr Weg zu uns</a></li>
+            </ul>
+        </nav>
     </div>
 </header>
 
@@ -61,11 +58,11 @@
     <!-- Hauptbereich -->
     <main id="salon">
 
-    <!-- Feld für die Öffnungszeiten -->
+        <!-- Feld für die Öffnungszeiten -->
         <article class="opening-hours-block">
             <h3>Öffnungszeiten</h3>
             <ul class="hours-list">
-                <li><span>Dienstag, Donnerstag & Freitag:</span> <span>09:00 – 18:00 Uhr</span></li>
+                <li><span>Dienstag, Donnerstag & Freitag:</span> <span>09:00 – 17:30 Uhr</span></li>
                 <li><span>Mittwoch & Samstag:</span> <span>09:00 – 13:00 Uhr</span></li>
                 <li><span>Montag:</span> <span>Geschlossen</span></li>
             </ul>
@@ -73,51 +70,75 @@
         </article>
 
         <!-- Container 1: Der Salon -->
-<article class="salon-block">
-    <h3>Der Salon</h3>
-    <p>Modern – Kreativ – Individuell: Ein Handwerk, das viele Facetten bietet, braucht einen Experten.</p>
-    
-    <div class="expandable-content">
-        <div class="image-grid">
-            <img src="picture/salon1.jpg" alt="Salon Einblick 1">
-        </div>
-        <a href="salon.html" class="btn btn-dark">Mehr anzeigen</a>
-    </div>
-</article>
+        <article class="salon-block">
+            <h3>Der Salon</h3>
+            <p> In unserem Salon erwartet Sie ein Team, das mit Freundlichkeit und Fachwissen gerne für Sie da ist.
+        In unserem modern ausgestatteten Salon setzen wir Ihre Wünsche gekonnt um. </p>
+            
+            <div class="expandable-content">
+                <!-- START: Slider Container -->
+                <div class="slider-container">
+                    <button class="slider-btn prev-btn" aria-label="Vorheriges Bild">&#10094;</button>
+                    
+                    <div class="slider-wrapper">
+                        <div class="slider-track">
+                            <div class="slide">
+                                <img src="picture/slider1.jpg" alt="Salon Einblick 1">
+                            </div>
+                            <div class="slide">
+                                <img src="picture/slider2.jpg" alt="Salon Einblick 2">
+                            </div>
+                            <div class="slide">
+                                <img src="picture/slider3.jpg" alt="Salon Einblick 3">
+                            </div>
+                            <div class="slide">
+                                <img src="picture/slider4.jpg" alt="Salon Einblick 4">
+                            </div>
+                        </div>
+                    </div>
 
-       <!-- Container 2: Das Team -->
-<article class="salon-block">
-    <h3>Das Team</h3>
-    <p>Unser Team besteht aus Viola Schüßler und Shierin Juillot. Wir betreiben das Handwerk des Friseurs mit Leidenschaft!</p>
-    
-    <div class="expandable-content">
-        <div class="image-grid">
-            <img src="picture/team.jpg" alt="Das Team">
-        </div>
-        <a href="team.html" class="btn btn-dark">Mehr anzeigen</a>
-    </div>
-</article>
+                    <button class="slider-btn next-btn" aria-label="Nächstes Bild">&#10095;</button>
+                    
+                    <!-- Punkte-Navigation -->
+                    <div class="slider-dots"></div>
+                </div>
+                <!-- ENDE: Slider Container -->
 
-<!-- Container 3: Unsere Leistungen -->
-<article class="salon-block">
-    <h3>Unsere Leistungen</h3>
-    <p>In unserem Friseursalon "Shierin's Hair & Beauty" bieten wir Ihnen eine Vielzahl hochwertiger Leistungen an.</p>
-    
-    <div class="expandable-content">
-        <div class="image-grid">
-            <img src="picture/scheren.jpg" alt="Leistung 1">
-        </div>
-        <a href="leistungen.html" class="btn btn-dark">Mehr anzeigen</a>
-    </div>
-</article>
+            </div>
+        </article>
 
-<!-- Container 4: Kontakt -->
-<article class="salon-block">
-    <h3>Kontakt</h3>
-    <p>Bei Fragen stehen wir Ihnen unter der Telefonnummer 06174 23051 zur Verfügung.</p>
-    
-    <a href="kontakt.html" class="btn btn-dark">kontaktieren</a>
-</article>
+        <!-- Container 2: Das Team -->
+        <article class="salon-block">
+            <h3>Das Team</h3>
+            <p>Unser Team besteht aus Viola Schüßler und Shierin Juillot. Wir betreiben das Handwerk des Friseurs mit Leidenschaft!</p>
+            
+            <div class="expandable-content">
+                <div class="image-grid">
+                    <img src="picture/team.jpg" alt="Das Team">
+                </div>
+            </div>
+        </article>
+
+        <!-- Container 3: Unsere Leistungen -->
+        <article class="salon-block">
+            <h3>Unsere Leistungen</h3>
+            <p>In unserem Friseursalon "Shierin's Hair & Beauty" bieten wir Ihnen eine Vielzahl hochwertiger Leistungen an.</p>
+            
+            <div class="expandable-content">
+                <div class="image-grid">
+                    <img src="picture/scheren.jpg" alt="Leistung 1">
+                </div>
+                <a href="leistungen.html" class="btn btn-dark">Mehr anzeigen</a>
+            </div>
+        </article>
+
+        <!-- Container 4: Kontakt -->
+        <article class="salon-block">
+            <h3>Kontakt</h3>
+            <p>Bei Fragen stehen wir Ihnen unter der Telefonnummer 06174 23051 zur Verfügung.</p>
+            
+            <a href="kontakt.html" class="btn btn-dark">Ihr Weg zu uns</a>
+        </article>
 
     </main>
 
@@ -139,37 +160,161 @@
         </nav>
     </footer>
 
-    <!-- JavaScript für das Sandwich-Menü und den Scroll-Pfeil -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const menuToggle = document.getElementById('menuToggle');
-        const mainNav = document.getElementById('mainNav');
-        const backToTopBtn = document.getElementById('backToTop');
+    <!-- JavaScript für Navigation, Scroll-Pfeil & Bild-Slider -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const mainNav = document.getElementById('mainNav');
+            const backToTopBtn = document.getElementById('backToTop');
 
-        // 1. Mobile Sandwich-Menü öffnen/schließen (inkl. X-Animation)
-        menuToggle.addEventListener('click', function() {
-            menuToggle.classList.toggle('is-active');
-            mainNav.classList.toggle('open');
-        });
+            // 1. Mobile Sandwich-Menü öffnen/schließen
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', function() {
+                    menuToggle.classList.toggle('is-active');
+                    mainNav.classList.toggle('open');
+                });
 
-        // 2. Menü automatisch schließen, wenn ein Link angeklickt wird
-        const navLinks = mainNav.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('is-active');
-                mainNav.classList.remove('open');
-            });
-        });
+                // Menü bei Klick auf Link schließen
+                const navLinks = mainNav.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuToggle.classList.remove('is-active');
+                        mainNav.classList.remove('open');
+                    });
+                });
+            }
 
-        // 3. Scroll-to-Top Pfeil Sichtbarkeit steuern
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
+            // 2. Scroll-to-Top Pfeil
+            if (backToTopBtn) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 300) {
+                        backToTopBtn.classList.add('show');
+                    } else {
+                        backToTopBtn.classList.remove('show');
+                    }
+                });
+            }
+
+            // 3. AUTOMATISCHER BILD-SLIDER
+            const track = document.querySelector('.slider-track');
+            const sliderContainer = document.querySelector('.slider-container');
+
+            if (track && sliderContainer) {
+                const slides = Array.from(track.children);
+                const nextBtn = document.querySelector('.next-btn');
+                const prevBtn = document.querySelector('.prev-btn');
+                const dotsContainer = document.querySelector('.slider-dots');
+                const wrapper = document.querySelector('.slider-wrapper');
+
+                let currentIndex = 0;
+                let startX = 0;
+                let isDragging = false;
+                let autoplayTimer = null;
+                const AUTOPLAY_DELAY = 3000; // 3 Sekunden pro Bild
+
+                // Navigation-Dots erzeugen
+                slides.forEach((_, index) => {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
+                    if (index === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        goToSlide(index);
+                        resetAutoplay();
+                    });
+                    if (dotsContainer) dotsContainer.appendChild(dot);
+                });
+
+                const dots = dotsContainer ? Array.from(dotsContainer.children) : [];
+
+                function updateSlider() {
+                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentIndex);
+                    });
+                }
+
+                function goToSlide(index) {
+                    currentIndex = index;
+                    updateSlider();
+                }
+
+                function nextSlide() {
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    updateSlider();
+                }
+
+                function prevSlide() {
+                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                    updateSlider();
+                }
+
+                function startAutoplay() {
+                    stopAutoplay();
+                    autoplayTimer = setInterval(nextSlide, AUTOPLAY_DELAY);
+                }
+
+                function stopAutoplay() {
+                    if (autoplayTimer) {
+                        clearInterval(autoplayTimer);
+                        autoplayTimer = null;
+                    }
+                }
+
+                function resetAutoplay() {
+                    stopAutoplay();
+                    startAutoplay();
+                }
+
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', () => {
+                        nextSlide();
+                        resetAutoplay();
+                    });
+                }
+
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', () => {
+                        prevSlide();
+                        resetAutoplay();
+                    });
+                }
+
+                // Hover-Pause auf dem PC
+                sliderContainer.addEventListener('mouseenter', stopAutoplay);
+                sliderContainer.addEventListener('mouseleave', startAutoplay);
+
+                // Wisch-Geste auf Mobilgeräten
+                if (wrapper) {
+                    wrapper.addEventListener('touchstart', (e) => {
+                        stopAutoplay();
+                        startX = e.touches[0].clientX;
+                        isDragging = true;
+                    }, { passive: true });
+
+                    wrapper.addEventListener('touchend', (e) => {
+                        if (!isDragging) return;
+                        const endX = e.changedTouches[0].clientX;
+                        const diffX = startX - endX;
+
+                        if (Math.abs(diffX) > 50) {
+                            if (diffX > 0) nextSlide();
+                            else prevSlide();
+                        }
+                        isDragging = false;
+                        startAutoplay();
+                    });
+                }
+
+                // Pausieren beim Tab-Wechsel
+                document.addEventListener('visibilitychange', () => {
+                    if (document.hidden) stopAutoplay();
+                    else startAutoplay();
+                });
+
+                // Autoplay starten
+                startAutoplay();
             }
         });
-    });
-</script>
+    </script>
 </body>
 </html>
