@@ -219,10 +219,13 @@ nav ul li {
     display: block;
 }
 
+/* ==========================================================================
+   SANDWICH BUTTON & ANIMATION
+   ========================================================================== */
 .menu-toggle {
     display: none;
     flex-direction: column;
-    justify-style: space-between;
+    justify-content: space-between; /* KORRIGIERT: statt justify-style */
     width: 28px;
     height: 20px;
     background: transparent;
@@ -234,23 +237,27 @@ nav ul li {
 
 .menu-toggle span {
     width: 100%;
-    height: 2px;
+    height: 2.5px;
     background-color: var(--heading-color);
     border-radius: 2px;
-    transition: all 0.3s ease-in-out;
-    transform-origin: 1px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform-origin: center; /* KORRIGIERT: Zentrierter Drehpunkt */
 }
 
+/* PERFEKTES "X" BEIM ÖFFNEN */
+/* Obere Linie: 8.75px nach unten verschieben und drehen */
 .menu-toggle.is-active span:nth-child(1) {
-    transform: rotate(45deg);
+    transform: translateY(8.75px) rotate(45deg);
 }
 
+/* Mittlere Linie: ausblenden */
 .menu-toggle.is-active span:nth-child(2) {
     opacity: 0;
 }
 
+/* Untere Linie: 8.75px nach oben verschieben und entgegengesetzt drehen */
 .menu-toggle.is-active span:nth-child(3) {
-    transform: rotate(-45deg);
+    transform: translateY(-8.75px) rotate(-45deg);
 }
 
 /* ==========================================================================

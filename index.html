@@ -25,7 +25,7 @@
             </a>
         </div>
 
-        <!-- 2. Sandwich-Button (rechts) -->
+        <!-- 2. Sandwich-Button (rechts auf Mobilgeräten) -->
         <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
             <span></span>
             <span></span>
@@ -35,11 +35,8 @@
         <!-- 3. Navigation (ausklappbar auf Mobilgeräten) -->
         <nav id="mainNav">
             <ul>
-                    <a href="index.html">Start</a>
-                    <a href="leistungen.html">Unsere Leistungen</a>
-                    <ul class="dropdown">
-                    </ul>
-                </li>
+                <li><a href="index.html">Start</a></li>
+                <li><a href="leistungen.html">Unsere Leistungen</a></li>
                 <li><a href="kontakt.html">Ihr Weg zu uns</a></li>
             </ul>
         </nav>
@@ -160,29 +157,33 @@
         </nav>
     </footer>
 
-    <!-- JavaScript für Navigation, Scroll-Pfeil & Bild-Slider -->
+    <!-- JavaScript für Sandwich-Menü & Scroll-Pfeil -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const menuToggle = document.getElementById('menuToggle');
             const mainNav = document.getElementById('mainNav');
             const backToTopBtn = document.getElementById('backToTop');
 
-            // 1. Mobile Sandwich-Menü öffnen/schließen
-            if (menuToggle && mainNav) {
-                menuToggle.addEventListener('click', function() {
-                    menuToggle.classList.toggle('is-active');
-                    mainNav.classList.toggle('open');
-                });
+            // 1. Sandwich-Menü öffnen & schließen
+if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', function() {
+        const isOpen = menuToggle.classList.toggle('is-active');
+        mainNav.classList.toggle('open');
+        
+        // Barrierefreiheit: aria-expanded aktualisieren
+        menuToggle.setAttribute('aria-expanded', isOpen);
+    });
 
-                // Menü bei Klick auf Link schließen
-                const navLinks = mainNav.querySelectorAll('a');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        menuToggle.classList.remove('is-active');
-                        mainNav.classList.remove('open');
-                    });
-                });
-            }
+    // 2. Menü schließen, wenn ein Link angeklickt wird
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('is-active');
+            mainNav.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
 
             // 2. Scroll-to-Top Pfeil
             if (backToTopBtn) {
@@ -210,7 +211,7 @@
                 let startX = 0;
                 let isDragging = false;
                 let autoplayTimer = null;
-                const AUTOPLAY_DELAY = 3000; // 3 Sekunden pro Bild
+                const AUTOPLAY_DELAY = 3000;
 
                 // Navigation-Dots erzeugen
                 slides.forEach((_, index) => {
@@ -279,11 +280,9 @@
                     });
                 }
 
-                // Hover-Pause auf dem PC
                 sliderContainer.addEventListener('mouseenter', stopAutoplay);
                 sliderContainer.addEventListener('mouseleave', startAutoplay);
 
-                // Wisch-Geste auf Mobilgeräten
                 if (wrapper) {
                     wrapper.addEventListener('touchstart', (e) => {
                         stopAutoplay();
@@ -305,13 +304,11 @@
                     });
                 }
 
-                // Pausieren beim Tab-Wechsel
                 document.addEventListener('visibilitychange', () => {
                     if (document.hidden) stopAutoplay();
                     else startAutoplay();
                 });
 
-                // Autoplay starten
                 startAutoplay();
             }
         });
