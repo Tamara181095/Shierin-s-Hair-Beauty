@@ -583,8 +583,21 @@ footer a:active {
 .hours-list li {
     display: flex;
     justify-content: space-between;
+    align-items: baseline; /* Richtet die Uhrzeit an der ersten Textzeile aus */
+    gap: 10px; /* Verhindert, dass Text und Uhrzeit zusammenkleben */
     padding: 8px 0;
     border-bottom: 1px dashed #ddd;
+}
+
+/* Linke Spalte (Wochentage): Beim Umbrechen linksbündig ausrichten */
+.hours-list li span:first-child {
+    text-align: left;
+}
+
+/* Rechte Spalte (Uhrzeiten): Rechtsbündig & "Uhr" bleibt in derselben Zeile */
+.hours-list li span:last-child {
+    text-align: right;
+    white-space: nowrap;
 }
 
 .hours-list li:last-child {
