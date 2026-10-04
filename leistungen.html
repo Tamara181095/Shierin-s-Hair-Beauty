@@ -9,21 +9,21 @@
     <!-- Google Fonts Einbindung -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Megrim&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Megrim&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <style>
         /* CSS-VARIABLEN (FARBEN & SCHRIFTEN) */
         :root {
             --bg-color: #F9F8F6;      
-            --heading-color: #3D3D3D;  
+            --text-color: #A8A09B;     
+            --heading-color: var(--text-color);  /* Gleiche Farbe wie Fließtext */
             --button-bg: #4A4A4A;     
             --footer-bg: #BFB9B4;     
-            --text-color: #A8A09B;     
             --footer-text: #FFFFFF;    
 
             /* Schriftarten */
             --font-logo: 'Megrim', sans-serif;
-            --font-headings: 'Dancing Script', cursive;
+            --font-headings: 'Raleway', sans-serif; /* Gleiche Schriftart wie Fließtext */
             --font-body: 'Raleway', sans-serif;
         }
 
@@ -53,26 +53,25 @@
         /* ÜBERSCHRIFTEN */
         h1, h2, h3 {
             color: var(--heading-color);
-            font-family: var(--font-headings);
+            font-family: var(--font-body);
             line-height: 1.2;
         }
 
-        /* 1. HEADER (3-Spalten-Layout: Logo exakt mittig, Nav rechts) */
-        /* 1. HEADER (Exakt angepasst an die max-width der Website) */
+        /* 1. HEADER */
         header {
             position: fixed;
             top: 0;
-            left: 50%;                         /* Vom linken Bildschirmrand in die Mitte */
-            transform: translateX(-50%);       /* Exakt um die Hälfte der eigenen Breite nach links verschieben */
+            left: 50%;
+            transform: translateX(-50%);
             width: 100%;
-            max-width: 1500px;                 /* Passt sich exakt der Body-Maximalbreite an */
+            max-width: 1500px;
             z-index: 1000;
             padding: 1.2rem 2.5rem;
             background-color: rgba(249, 248, 246, 0.92);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-bottom: 1px solid rgba(191, 185, 180, 0.3);
-            box-sizing: border-box;            /* Wichtig, damit Padding die Breite nicht sprengt */
+            box-sizing: border-box;
         }
 
         .header-container {
@@ -83,7 +82,6 @@
             align-items: center;
         }
 
-        /* Unsichtbares Element links, damit das Logo in der echten Mitte sitzt */
         .header-container::before {
             content: "";
             display: block;
@@ -111,7 +109,7 @@
 
         nav {
             grid-column: 3;
-            justify-self: end; /* Navigation rechtsbündig */
+            justify-self: end;
         }
 
         nav ul {
@@ -227,12 +225,13 @@
             margin-bottom: 2.5rem;
         }
 
+        /* Hauptüberschrift - dezent verkleinert */
         .script-heading {
-            font-family: var(--font-headings);
-            color: var(--heading-color);
-            font-size: clamp(2.3rem, 3.5vw, 3.2rem);
+            font-family: var(--font-body);
+            color: var(--text-color);
+            font-size: clamp(1.8rem, 2.6vw, 2.4rem);
             line-height: 1.3;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             font-weight: 500;
         }
 
@@ -248,7 +247,7 @@
             width: 80px;
             height: 1px;
             background-color: var(--footer-bg);
-            margin: 2rem auto 2.5rem auto;
+            margin: 1.8rem auto 2.2rem auto;
         }
 
         .text-block p {
@@ -399,7 +398,6 @@
                 text-align: center;
             }
 
-            /* Mobiles Dropdown Layout */
             .dropdown {
                 position: static;
                 transform: none;
@@ -457,8 +455,8 @@
             <nav id="mainNav">
                 <ul>
                     <li><a href="index.html">Start</a></li>
-                        <a href="leistungen.html">Unsere Leistungen</a>
-                        <a href="kontakt.html">Ihr Weg zu uns</a></li>
+                    <li><a href="leistungen.html">Unsere Leistungen</a></li>
+                    <li><a href="kontakt.html">Ihr Weg zu uns</a></li>
                 </ul>
             </nav>
         </div>
@@ -469,9 +467,9 @@
         <!-- Bild Leistungen -->
         <img src="picture/scheren.jpg" alt="Unsere Leistungen" class="salon-detail-img">
 
-        <!-- Schwungvolle Überschrift -->
+        <!-- Überschrift -->
         <h2 class="script-heading">
-            Styling - Farbe - Pflege
+           Styling - Farbe - Pflege
         </h2>
 
         <!-- Untertitel -->
@@ -494,9 +492,9 @@
                 Gerne unterstreichen wir Ihre natürliche Haarfarbe mit ausdrucksstarken Strähnen, sanften Tönungen oder Haarcolorationen.
             </p>
             <br>
-<a href="https://www.newsha.de" target="_blank" rel="noopener noreferrer" class="btn btn-dark">
-    Mehr über NEWSHA erfahren
-</a>
+            <a href="https://www.newsha.de" target="_blank" rel="noopener noreferrer" class="btn btn-dark">
+                Mehr über NEWSHA erfahren
+            </a>
         </div>
     </main>
 

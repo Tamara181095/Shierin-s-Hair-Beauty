@@ -3,15 +3,15 @@
    ========================================================================== */
 :root {
     --bg-color: #F9F8F6;      /* Helles Off-White / Elfenbein */
-    --heading-color: #3D3D3D;  /* Dunkelgrau für Schreibschrift-Überschriften */
+    --text-color: #A8A09B;     /* Sanftes Mittelgrau für Fließtext & Untertitel */
+    --heading-color: var(--text-color); /* Überschriften in gleicher Farbe wie Fließtext */
     --button-bg: #4A4A4A;     /* Anthrazit für Buttons */
     --footer-bg: #BFB9B4;     /* Warmes Taupe / Greige für den Footer */
-    --text-color: #A8A09B;     /* Sanftes Mittelgrau für Fließtext & Untertitel */
     --footer-text: #FFFFFF;    /* Weißer Text auf Taupe-Hintergrund */
 
     /* Schriftarten */
     --font-logo: 'Megrim', sans-serif;
-    --font-headings: 'Dancing Script', cursive;
+    --font-headings: 'Megrim', sans-serif;
     --font-body: 'Raleway', sans-serif;
 }
 
@@ -40,7 +40,7 @@ body {
     position: relative;
 }
 
-/* ÜBERSCHRIFTEN (Moderat vergrößert) */
+/* ÜBERSCHRIFTEN (Standard / Globale Megrim-Schrift) */
 h1, h2, h3 {
     color: var(--heading-color);
     font-family: var(--font-headings);
@@ -225,7 +225,7 @@ nav ul li {
 .menu-toggle {
     display: none;
     flex-direction: column;
-    justify-content: space-between; /* KORRIGIERT: statt justify-style */
+    justify-content: space-between;
     width: 28px;
     height: 20px;
     background: transparent;
@@ -241,21 +241,18 @@ nav ul li {
     background-color: var(--heading-color);
     border-radius: 2px;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    transform-origin: center; /* KORRIGIERT: Zentrierter Drehpunkt */
+    transform-origin: center;
 }
 
 /* PERFEKTES "X" BEIM ÖFFNEN */
-/* Obere Linie: 8.75px nach unten verschieben und drehen */
 .menu-toggle.is-active span:nth-child(1) {
     transform: translateY(8.75px) rotate(45deg);
 }
 
-/* Mittlere Linie: ausblenden */
 .menu-toggle.is-active span:nth-child(2) {
     opacity: 0;
 }
 
-/* Untere Linie: 8.75px nach oben verschieben und entgegengesetzt drehen */
 .menu-toggle.is-active span:nth-child(3) {
     transform: translateY(-8.75px) rotate(-45deg);
 }
@@ -309,10 +306,13 @@ main {
     text-align: center;
 }
 
+/* Container-Überschriften in Raleway und Fließtext-Farbe */
 .salon-block h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
     margin-bottom: 1rem;
     color: var(--heading-color);
-    font-size: clamp(2.0rem, 3.5vw, 2.8rem);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
 }
 
 .salon-block p {
@@ -389,7 +389,8 @@ details.salon-details summary::-webkit-details-marker {
 }
 
 .back-to-top:hover {
-    background-color: var(--heading-color);
+    background-color: var(--button-bg);
+    opacity: 0.85;
     transform: translateY(-3px);
 }
 
@@ -537,7 +538,7 @@ footer a:active {
     }
 
     .salon-block h3 {
-        font-size: 2.8rem; /* Auf 2.8rem angepasst */
+        font-size: 2.2rem;
         margin-bottom: 15px;
     }
 
@@ -568,9 +569,13 @@ footer a:active {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
+/* Öffnungszeiten Container-Überschrift */
 .opening-hours-block h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
     margin-bottom: 15px;
-    font-size: 2.2rem;
+    font-size: 2.0rem;
+    color: var(--heading-color);
 }
 
 .hours-list {
@@ -583,18 +588,16 @@ footer a:active {
 .hours-list li {
     display: flex;
     justify-content: space-between;
-    align-items: baseline; /* Richtet die Uhrzeit an der ersten Textzeile aus */
-    gap: 10px; /* Verhindert, dass Text und Uhrzeit zusammenkleben */
+    align-items: baseline;
+    gap: 10px;
     padding: 8px 0;
     border-bottom: 1px dashed #ddd;
 }
 
-/* Linke Spalte (Wochentage): Beim Umbrechen linksbündig ausrichten */
 .hours-list li span:first-child {
     text-align: left;
 }
 
-/* Rechte Spalte (Uhrzeiten): Rechtsbündig & "Uhr" bleibt in derselben Zeile */
 .hours-list li span:last-child {
     text-align: right;
     white-space: nowrap;
@@ -618,7 +621,7 @@ footer a:active {
     }
 
     .opening-hours-block h3 {
-        font-size: 2.8rem; /* Auf 2.8rem angepasst */
+        font-size: 2.2rem;
         margin-bottom: 20px;
     }
 
