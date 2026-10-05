@@ -16,127 +16,99 @@
 </head>
 <body>
 
-<header>
-    <div class="header-container">
-        <!-- 1. Logo (links) -->
+    <!-- Header -->
+    <header>
         <div class="logo">
             <a href="index.html">
                 <h1>SHIERIN'S HAIR & BEAUTY</h1>
             </a>
         </div>
 
-        <!-- 2. Sandwich-Button (rechts auf Mobilgeräten) -->
+        <!-- Sandwich / Burger Button für mobile Bildschirme -->
         <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
             <span></span>
             <span></span>
             <span></span>
         </button>
 
-        <!-- 3. Navigation (ausklappbar auf Mobilgeräten) -->
         <nav id="mainNav">
             <ul>
-                <li><a href="index.html">Start</a></li>
+                <li><a href="salon.html">Der Salon</a></li>
+                <li><a href="team.html">Das Team</a></li>
                 <li><a href="leistungen.html">Unsere Leistungen</a></li>
-                <li><a href="kontakt.html">Ihr Weg zu uns</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
         </nav>
-    </div>
-</header>
+    </header>
 
     <!-- Hero-Bereich -->
     <section class="hero" id="start">
         <div class="hero-content">
             <h2>Shierin's Hair & Beauty</h2>
             <p>Schön, dass Sie den Weg zu uns gefunden haben!</p>
-            <a href="leistungen.html" class="btn btn-outline">Zu unseren Leistungen</a>
+            <a href="leistungen.html" class="btn btn-outline">zu unseren Leistungen</a>
         </div>
     </section>
 
     <!-- Hauptbereich -->
     <main id="salon">
 
-        <!-- Feld für die Öffnungszeiten -->
-        <article class="opening-hours-block">
-            <h3>Öffnungszeiten</h3>
-            <ul class="hours-list">
-                <li><span>Dienstag, Donnerstag & Freitag:</span> <span>09:00 – 17:30 Uhr</span></li>
-                <li><span>Mittwoch & Samstag:</span> <span>09:00 – 13:00 Uhr</span></li>
-                <li><span>Montag:</span> <span>Geschlossen</span></li>
-            </ul>
-            <p class="hours-note">Termine nach Vereinbarung unter der <a href="tel:0617423051" class="phone-link">06174 23051</a></p>
-        </article>
-
         <!-- Container 1: Der Salon -->
         <article class="salon-block">
             <h3>Der Salon</h3>
-            <p>Modern - Kreativ - Individuell: Ein Handwerk, das viele Facetten bietet, braucht einen Experten.</p>
-            <br>
-            <p> In unserem Salon erwartet Sie ein Team, das mit Freundlichkeit und Fachwissen gerne für Sie da ist.
-        In unserem modern ausgestatteten Salon setzen wir Ihre Wünsche gekonnt um. </p>
+            <p>Modern – Kreativ – Individuell: Ein Handwerk, das viele Facetten bietet, braucht einen Experten.</p>
             
-            <div class="expandable-content">
-                <!-- START: Slider Container -->
-                <div class="slider-container">
-                    <button class="slider-btn prev-btn" aria-label="Vorheriges Bild">&#10094;</button>
-                    
-                    <div class="slider-wrapper">
-                        <div class="slider-track">
-                            <div class="slide">
-                                <img src="picture/slider1.jpg" alt="Salon Einblick 1">
-                            </div>
-                            <div class="slide">
-                                <img src="picture/slider2.jpg" alt="Salon Einblick 2">
-                            </div>
-                            <div class="slide">
-                                <img src="picture/slider3.jpg" alt="Salon Einblick 3">
-                            </div>
-                            <div class="slide">
-                                <img src="picture/slider4.jpg" alt="Salon Einblick 4">
-                            </div>
-                        </div>
+            <details class="salon-details">
+                <summary class="btn btn-dark">entdecken</summary>
+                <div class="expandable-content">
+                    <div class="image-grid">
+                        <img src="picture/salon1.jpg" alt="Salon Einblick 1">
+                        <img src="picture/salon2.jpg" alt="Salon Einblick 2">
                     </div>
-
-                    <button class="slider-btn next-btn" aria-label="Nächstes Bild">&#10095;</button>
-                    
-                    <!-- Punkte-Navigation -->
-                    <div class="slider-dots"></div>
+                    <a href="salon.html" class="btn btn-outline-dark">Mehr anzeigen</a>
                 </div>
-                <!-- ENDE: Slider Container -->
-
-            </div>
+            </details>
         </article>
 
-        <!-- Container 2: DAS TEAM -->
+        <!-- Container 2: Das Team -->
         <article class="salon-block">
             <h3>Das Team</h3>
             <p>Unser Team besteht aus Viola Schüßler und Shierin Juillot. Wir betreiben das Handwerk des Friseurs mit Leidenschaft!</p>
             
-            <div class="expandable-content">
-                <div class="image-grid">
-                    <img src="picture/team.jpg" alt="Das Team">
+            <details class="salon-details">
+                <summary class="btn btn-dark">kennenlernen</summary>
+                <div class="expandable-content">
+                    <div class="image-grid">
+                        <img src="picture/team.jpg" alt="Das Team">
+                    </div>
+                    <a href="team.html" class="btn btn-outline-dark">Mehr anzeigen</a>
                 </div>
-            </div>
+            </details>
         </article>
 
-        <!-- Container 3: UNSERE LEISTUNGEN -->
+        <!-- Container 3: Unsere Leistungen -->
         <article class="salon-block">
             <h3>Unsere Leistungen</h3>
             <p>In unserem Friseursalon "Shierin's Hair & Beauty" bieten wir Ihnen eine Vielzahl hochwertiger Leistungen an.</p>
             
-            <div class="expandable-content">
-                <div class="image-grid">
-                    <img src="picture/scheren.jpg" alt="Leistung 1">
+            <details class="salon-details">
+                <summary class="btn btn-dark">mehr erfahren</summary>
+                <div class="expandable-content">
+                    <div class="image-grid">
+                        <img src="picture/scheren.jpg" alt="Leistung 1">
+                        <img src="picture/farben.jpg" alt="Leistung 2">
+                    </div>
+                    <a href="leistungen.html" class="btn btn-outline-dark">Mehr anzeigen</a>
                 </div>
-                <a href="leistungen.html" class="btn btn-dark">Zu unseren Leistungen</a>
-            </div>
+            </details>
         </article>
 
-        <!-- Container 4: KONTAKT -->
+        <!-- Container 4: Kontakt -->
         <article class="salon-block">
             <h3>Kontakt</h3>
             <p>Bei Fragen stehen wir Ihnen unter der Telefonnummer 06174 23051 zur Verfügung.</p>
             
-            <a href="kontakt.html" class="btn btn-dark">Ihr Weg zu uns</a>
+            <a href="kontakt.html" class="btn btn-dark">kontaktieren</a>
         </article>
 
     </main>
@@ -146,172 +118,33 @@
 
     <!-- Footer -->
     <footer>
-        <p>SHIERIN'S HAIR & BEAUTY</p>
-        <p>ALT FALKENSTEIN 2</p>
-        <p>61462 KÖNIGSTEIN IM TAUNUS</p>
-        <br>
-        <p>TEL.: 06174 23051</p>
+        <p>&copy; 2026 SHIERIN'S HAIR & BEAUTY. Alle Rechte vorbehalten.</p>
         <nav>
             <ul>
-                <li><a href="impressum.html">Impressum</a></li>
-                <li><a href="datenschutz.html">Datenschutz</a></li>
+                <li><a href="#">Impressum</a></li>
+                <li><a href="#">Datenschutz</a></li>
             </ul>
         </nav>
     </footer>
 
-    <!-- JavaScript für Sandwich-Menü & Scroll-Pfeil -->
+    <!-- JavaScript für das Sandwich-Menü und den Scroll-Pfeil -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const menuToggle = document.getElementById('menuToggle');
-            const mainNav = document.getElementById('mainNav');
-            const backToTopBtn = document.getElementById('backToTop');
+        // 1. Mobile Sandwich-Menü Funktionalität
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
 
-            // 1. Sandwich-Menü öffnen & schließen
-if (menuToggle && mainNav) {
-    menuToggle.addEventListener('click', function() {
-        const isOpen = menuToggle.classList.toggle('is-active');
-        mainNav.classList.toggle('open');
-        
-        // Barrierefreiheit: aria-expanded aktualisieren
-        menuToggle.setAttribute('aria-expanded', isOpen);
-    });
-
-    // 2. Menü schließen, wenn ein Link angeklickt wird
-    const navLinks = mainNav.querySelectorAll('a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.classList.remove('is-active');
-            mainNav.classList.remove('open');
-            menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('open');
         });
-    });
-}
 
-            // 2. Scroll-to-Top Pfeil
-            if (backToTopBtn) {
-                window.addEventListener('scroll', function() {
-                    if (window.scrollY > 300) {
-                        backToTopBtn.classList.add('show');
-                    } else {
-                        backToTopBtn.classList.remove('show');
-                    }
-                });
-            }
+        // 2. Scroll-to-Top Pfeil Sichtbarkeit steuern
+        const backToTopBtn = document.getElementById('backToTop');
 
-            // 3. AUTOMATISCHER BILD-SLIDER
-            const track = document.querySelector('.slider-track');
-            const sliderContainer = document.querySelector('.slider-container');
-
-            if (track && sliderContainer) {
-                const slides = Array.from(track.children);
-                const nextBtn = document.querySelector('.next-btn');
-                const prevBtn = document.querySelector('.prev-btn');
-                const dotsContainer = document.querySelector('.slider-dots');
-                const wrapper = document.querySelector('.slider-wrapper');
-
-                let currentIndex = 0;
-                let startX = 0;
-                let isDragging = false;
-                let autoplayTimer = null;
-                const AUTOPLAY_DELAY = 3000;
-
-                // Navigation-Dots erzeugen
-                slides.forEach((_, index) => {
-                    const dot = document.createElement('div');
-                    dot.classList.add('dot');
-                    if (index === 0) dot.classList.add('active');
-                    dot.addEventListener('click', () => {
-                        goToSlide(index);
-                        resetAutoplay();
-                    });
-                    if (dotsContainer) dotsContainer.appendChild(dot);
-                });
-
-                const dots = dotsContainer ? Array.from(dotsContainer.children) : [];
-
-                function updateSlider() {
-                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-                    dots.forEach((dot, index) => {
-                        dot.classList.toggle('active', index === currentIndex);
-                    });
-                }
-
-                function goToSlide(index) {
-                    currentIndex = index;
-                    updateSlider();
-                }
-
-                function nextSlide() {
-                    currentIndex = (currentIndex + 1) % slides.length;
-                    updateSlider();
-                }
-
-                function prevSlide() {
-                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                    updateSlider();
-                }
-
-                function startAutoplay() {
-                    stopAutoplay();
-                    autoplayTimer = setInterval(nextSlide, AUTOPLAY_DELAY);
-                }
-
-                function stopAutoplay() {
-                    if (autoplayTimer) {
-                        clearInterval(autoplayTimer);
-                        autoplayTimer = null;
-                    }
-                }
-
-                function resetAutoplay() {
-                    stopAutoplay();
-                    startAutoplay();
-                }
-
-                if (nextBtn) {
-                    nextBtn.addEventListener('click', () => {
-                        nextSlide();
-                        resetAutoplay();
-                    });
-                }
-
-                if (prevBtn) {
-                    prevBtn.addEventListener('click', () => {
-                        prevSlide();
-                        resetAutoplay();
-                    });
-                }
-
-                sliderContainer.addEventListener('mouseenter', stopAutoplay);
-                sliderContainer.addEventListener('mouseleave', startAutoplay);
-
-                if (wrapper) {
-                    wrapper.addEventListener('touchstart', (e) => {
-                        stopAutoplay();
-                        startX = e.touches[0].clientX;
-                        isDragging = true;
-                    }, { passive: true });
-
-                    wrapper.addEventListener('touchend', (e) => {
-                        if (!isDragging) return;
-                        const endX = e.changedTouches[0].clientX;
-                        const diffX = startX - endX;
-
-                        if (Math.abs(diffX) > 50) {
-                            if (diffX > 0) nextSlide();
-                            else prevSlide();
-                        }
-                        isDragging = false;
-                        startAutoplay();
-                    });
-                }
-
-                document.addEventListener('visibilitychange', () => {
-                    if (document.hidden) stopAutoplay();
-                    else startAutoplay();
-                });
-
-                startAutoplay();
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
             }
         });
     </script>
