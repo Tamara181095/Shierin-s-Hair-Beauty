@@ -3,27 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Unsere Leistungen - SHIERIN'S HAIR & BEAUTY">
-    <title>Unsere Leistungen - SHIERIN'S HAIR & BEAUTY</title>
+
+    <!-- SEO Meta-Tags -->
+    <title>Unsere Leistungen & Styling | SHIERIN'S HAIR & BEAUTY Königstein</title>
+    <meta name="description" content="Exklusive Friseur- & Beauty-Leistungen in Königstein im Taunus: Damen- & Herrenhaarschnitte, Styling, Coloration, Strähnen und Pflege mit NEWSHA-Produkten.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.shierins-hair-and-beauty.de/leistungen.html">
+
+    <!-- Open Graph Tags (für Vorschau beim Teilen auf WhatsApp, Instagram & Facebook) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Unsere Leistungen | SHIERIN'S HAIR & BEAUTY Königstein">
+    <meta property="og:description" content="Damenschnitte, Herrenhaarschnitte, Coloration & exklusive Pflege mit NEWSHA in Königstein im Taunus.">
+    <meta property="og:url" content="https://www.shierins-hair-and-beauty.de/leistungen.html">
+    <meta property="og:image" content="https://www.shierins-hair-and-beauty.de/picture/scheren.jpg">
 
     <!-- Google Fonts Einbindung -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Megrim&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Megrim&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <style>
         /* CSS-VARIABLEN (FARBEN & SCHRIFTEN) */
         :root {
-            --bg-color: #F9F8F6;       
-            --heading-color: #3D3D3D;  
+            --bg-color: #F9F8F6;      
+            --text-color: #A8A09B;     
+            --heading-color: var(--text-color);  /* Gleiche Farbe wie Fließtext */
             --button-bg: #4A4A4A;     
             --footer-bg: #BFB9B4;     
-            --text-color: #A8A09B;     
             --footer-text: #FFFFFF;    
 
             /* Schriftarten */
             --font-logo: 'Megrim', sans-serif;
-            --font-headings: 'Dancing Script', cursive;
+            --font-headings: 'Raleway', sans-serif; /* Gleiche Schriftart wie Fließtext */
             --font-body: 'Raleway', sans-serif;
         }
 
@@ -44,8 +55,6 @@
             color: var(--text-color);
             font-family: var(--font-body);
             line-height: 1.6;
-            
-            /* Zentrierter Rahmen */
             max-width: 1500px;
             margin: 0 auto;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
@@ -55,7 +64,7 @@
         /* ÜBERSCHRIFTEN */
         h1, h2, h3 {
             color: var(--heading-color);
-            font-family: var(--font-headings);
+            font-family: var(--font-body);
             line-height: 1.2;
         }
 
@@ -63,21 +72,30 @@
         header {
             position: fixed;
             top: 0;
-            left: 50% !important;
+            left: 50%;
             transform: translateX(-50%);
             width: 100%;
             max-width: 1500px;
             z-index: 1000;
-            padding: 1.8rem 2.5rem;
-            
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
-            
-            background-color: rgba(249, 248, 246, 0.95);
+            padding: 1.2rem 2.5rem;
+            background-color: rgba(249, 248, 246, 0.92);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-bottom: 1px solid rgba(191, 185, 180, 0.3);
+            box-sizing: border-box;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+        }
+
+        .header-container::before {
+            content: "";
+            display: block;
         }
 
         .logo {
@@ -93,7 +111,7 @@
 
         .logo h1 {
             font-family: var(--font-logo) !important;
-            font-size: 1.4rem;
+            font-size: clamp(1.1rem, 1.8vw, 1.4rem);
             color: var(--text-color);
             letter-spacing: 1.5px;
             margin: 0;
@@ -108,7 +126,7 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 1.5rem;
+            gap: clamp(1rem, 2vw, 2rem);
         }
 
         nav a,
@@ -117,7 +135,7 @@
             color: var(--heading-color) !important;
             font-family: var(--font-body);
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: clamp(0.88rem, 1vw, 0.98rem);
             letter-spacing: 0.5px;
             transition: color 0.2s ease;
         }
@@ -127,13 +145,51 @@
             color: var(--text-color) !important;
         }
 
+        /* DROPDOWN DESKTOP STYLES */
+        nav ul li {
+            position: relative;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(249, 248, 246, 0.98);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 4px;
+            padding: 0.5rem 0;
+            list-style: none;
+            min-width: 140px;
+            z-index: 1005;
+            text-align: center;
+        }
+
+        .dropdown li {
+            width: 100%;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 0.5rem 1rem;
+            white-space: nowrap;
+            font-size: 0.88rem;
+        }
+
+        .has-dropdown:hover .dropdown {
+            display: block;
+        }
+
         /* Sandwich / Burger Button Styles */
         .menu-toggle {
             display: none;
             flex-direction: column;
             justify-content: space-between;
-            width: 30px;
-            height: 22px;
+            width: 28px;
+            height: 20px;
             background: transparent;
             border: none;
             cursor: pointer;
@@ -163,39 +219,11 @@
             transform: rotate(-45deg);
         }
 
-        /* 2. HERO SECTION (optional nutzbar) */
-        .hero {
-            position: relative;
-            height: 85vh;
-            min-height: 480px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 1.5rem;
-            
-            background: linear-gradient(rgba(74, 74, 74, 0.4), rgba(74, 74, 74, 0.4)), 
-                        url('picture/leistungen.jpg') center/cover no-repeat;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            color: #ffffff;
-            z-index: 1;
-        }
-
-        .hero-content h2 {
-            color: #ffffff;
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-        }
-
         /* 3. MAIN CONTENT */
         main {
             max-width: 900px;
             margin: 0 auto;
-            padding: 8rem 1.5rem 4rem 1.5rem; /* Platz für den fixierten Header */
+            padding: 8.5rem 1.5rem 4rem 1.5rem;
             text-align: center;
         }
 
@@ -208,17 +236,18 @@
             margin-bottom: 2.5rem;
         }
 
+        /* Hauptüberschrift - dezent verkleinert */
         .script-heading {
-            font-family: var(--font-headings);
-            color: var(--heading-color);
-            font-size: 3.2rem;
+            font-family: var(--font-body);
+            color: var(--text-color);
+            font-size: clamp(1.8rem, 2.6vw, 2.4rem);
             line-height: 1.3;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             font-weight: 500;
         }
 
         .sub-heading {
-            font-size: 1.15rem;
+            font-size: clamp(1rem, 1.3vw, 1.15rem);
             color: var(--text-color);
             font-weight: 400;
             margin-bottom: 1.5rem;
@@ -229,11 +258,11 @@
             width: 80px;
             height: 1px;
             background-color: var(--footer-bg);
-            margin: 2rem auto 2.5rem auto;
+            margin: 1.8rem auto 2.2rem auto;
         }
 
         .text-block p {
-            font-size: 1.05rem;
+            font-size: clamp(1rem, 1.1vw, 1.05rem);
             color: var(--text-color);
             line-height: 1.8;
             margin-bottom: 1.2rem;
@@ -262,7 +291,7 @@
         }
 
         .btn-dark:hover {
-            opacity: 0.85;
+            background-color: var(--heading-color);
             transform: translateY(-2px);
         }
 
@@ -316,67 +345,97 @@
             list-style: none;
         }
 
-        footer a {
-            color: var(--footer-text);
+        footer a,
+        footer a:visited,
+        footer a:hover,
+        footer a:active {
+            color: var(--footer-text) !important;
             text-decoration: underline;
         }
 
-        /* RESPONSIVE DESIGN (MOBIL) */
-        @media (max-width: 768px) {
+        /* RESPONSIVE DESIGN (MOBILANSICHT) */
+        @media (max-width: 1350px) {
             header {
-                display: flex !important;
-                justify-content: space-between !important;
-                align-items: center !important;
-                padding: 1.2rem 1.5rem !important;
+                padding: 1rem 1.5rem;
+            }
+
+            .header-container {
+                grid-template-columns: 1fr auto 1fr;
+                width: 100%;
             }
 
             .logo {
-                grid-column: auto !important;
-                text-align: left !important;
-            }
-
-            .logo h1 {
-                font-size: 1.1rem;
+                grid-column: 2;
+                text-align: center;
+                margin: 0;
             }
 
             .menu-toggle {
-                display: flex !important;
+                display: flex;
+                grid-column: 3;
+                justify-self: end;
+                margin: 0;
             }
 
-            /* Mobiles Ausklapp-Menü */
             header nav {
-                position: fixed;
-                top: 60px; /* Platz unter dem Header */
+                grid-column: 1 / -1;
+                position: absolute;
+                top: 100%;
                 left: 0;
                 width: 100%;
                 background-color: rgba(249, 248, 246, 0.98);
                 backdrop-filter: blur(10px);
                 -webkit-backdrop-filter: blur(10px);
                 border-bottom: 1px solid rgba(191, 185, 180, 0.3);
-                display: none; /* Erst über JS eingeblendet */
-                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease-in-out;
             }
 
             header nav.open {
-                display: block !important;
+                max-height: 500px;
             }
 
             header nav ul {
                 flex-direction: column;
                 align-items: center;
-                padding: 1.8rem 0;
-                gap: 1.5rem;
+                padding: 1.5rem 0;
+                gap: 1.2rem;
+                width: 100%;
             }
 
-            header nav a {
-                font-size: 1.1rem;
+            header nav ul li {
+                width: 100%;
+                text-align: center;
             }
 
-            .hero-content h2 { font-size: 2.5rem; }
-            .script-heading { font-size: 2.3rem; }
+            .dropdown {
+                position: static;
+                transform: none;
+                display: none;
+                box-shadow: none;
+                background: transparent;
+                backdrop-filter: none;
+                padding: 0.5rem 0 0 0;
+                text-align: center;
+                width: 100%;
+            }
             
+            header nav.open .dropdown,
+            .has-dropdown:hover .dropdown {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+                margin-top: 0.5rem;
+            }
+
+            .dropdown a {
+                font-size: 0.9rem;
+                opacity: 0.8;
+            }
+
             main {
-                padding: 6rem 1rem 2.5rem 1rem;
+                padding: 6.5rem 1rem 2.5rem 1rem;
             }
 
             .salon-detail-img {
@@ -390,42 +449,43 @@
 
     <!-- Header -->
     <header>
-        <div class="logo">
-            <a href="index.html">
-                <h1>SHIERIN'S HAIR & BEAUTY</h1>
-            </a>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>SHIERIN'S HAIR & BEAUTY</h1>
+                </a>
+            </div>
+
+            <!-- Sandwich Button -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Start</a></li>
+                    <li><a href="leistungen.html">Unsere Leistungen</a></li>
+                    <li><a href="kontakt.html">Ihr Weg zu uns</a></li>
+                </ul>
+            </nav>
         </div>
-
-        <!-- Sandwich Button -->
-        <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <nav id="mainNav">
-            <ul>
-                <li><a href="salon.html">Der Salon</a></li>
-                <li><a href="team.html">Das Team</a></li>
-                <li><a href="leistungen.html">Unsere Leistungen</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
-        </nav>
     </header>
 
     <!-- Hauptbereich -->
     <main id="details">
         <!-- Bild Leistungen -->
-        <img src="picture/farben.jpg" alt="Unsere Leistungen" class="salon-detail-img">
+        <img src="picture/scheren.jpg" alt="Professionelle Friseur-Scheren und Styling-Tools bei SHIERIN'S HAIR & BEAUTY in Königstein im Taunus" class="salon-detail-img">
 
-        <!-- Schwungvolle Überschrift -->
+        <!-- Überschrift -->
         <h2 class="script-heading">
-            Styling - Farbe - Pflege
+           Styling - Farbe - Pflege
         </h2>
 
         <!-- Untertitel -->
         <p class="sub-heading">
-            Haare und Haut - ein Wunder der Natur.
+           Haare und Haut - ein Wunder der Natur.
         </p>
 
         <!-- Trennlinie -->
@@ -442,8 +502,10 @@
             <p>
                 Gerne unterstreichen wir Ihre natürliche Haarfarbe mit ausdrucksstarken Strähnen, sanften Tönungen oder Haarcolorationen.
             </p>
-
-            <a href="newsha.html" class="btn btn-dark">mehr über Newsha erfahren</a>
+            <br>
+            <a href="https://www.newsha.de" target="_blank" rel="noopener noreferrer" class="btn btn-dark">
+                Mehr über NEWSHA erfahren
+            </a>
         </div>
     </main>
 
@@ -452,11 +514,15 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 SHIERIN'S HAIR & BEAUTY. Alle Rechte vorbehalten.</p>
+        <p>SHIERIN'S HAIR & BEAUTY</p>
+        <p>ALT FALKENSTEIN 2</p>
+        <p>61462 KÖNIGSTEIN IM TAUNUS</p>
+        <br>
+        <p>TEL.: <a href="tel:0617423051" style="color: inherit; text-decoration: none;">06174 23051</a></p>
         <nav>
             <ul>
-                <li><a href="#">Impressum</a></li>
-                <li><a href="#">Datenschutz</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+                <li><a href="datenschutz.html">Datenschutz</a></li>
             </ul>
         </nav>
     </footer>
@@ -469,28 +535,34 @@
             const backToTopBtn = document.getElementById('backToTop');
 
             // 1. Sandwich-Menü öffnen & schließen
-            menuToggle.addEventListener('click', function() {
-                menuToggle.classList.toggle('is-active');
-                mainNav.classList.toggle('open');
-            });
-
-            // 2. Menü schließen, wenn ein Link angeklickt wird
-            const navLinks = mainNav.querySelectorAll('a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    menuToggle.classList.remove('is-active');
-                    mainNav.classList.remove('open');
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', function() {
+                    const isOpen = menuToggle.classList.toggle('is-active');
+                    mainNav.classList.toggle('open');
+                    menuToggle.setAttribute('aria-expanded', isOpen);
                 });
-            });
+
+                // 2. Menü schließen, wenn ein Link angeklickt wird
+                const navLinks = mainNav.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuToggle.classList.remove('is-active');
+                        mainNav.classList.remove('open');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
 
             // 3. Scroll-to-Top Pfeil nach 300px anzeigen
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 300) {
-                    backToTopBtn.classList.add('show');
-                } else {
-                    backToTopBtn.classList.remove('show');
-                }
-            });
+            if (backToTopBtn) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 300) {
+                        backToTopBtn.classList.add('show');
+                    } else {
+                        backToTopBtn.classList.remove('show');
+                    }
+                });
+            }
         });
     </script>
 </body>
